@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import Category from './components/Category'
 
 function App() {
-  const [Results, setResults] = useState([])
+  const [Results, setResults] = useState([])   //restAPI call
 useEffect(() => {
   fetch("http://localhost:3001/Categories")
   .then(response => response.json())
@@ -13,15 +14,31 @@ useEffect(() => {
   
 }, [])
 
+const RenderCategories = () => {
+  return Results.map(c => 
+    <Category key = {c.id} id = {c.id} title = {c.title} />
+  )
+}
+
 
   return (
-    <div>
+    <>
+    <header>
+      Store 
+    </header>
+    <section>
+      <article>
+      <div>
       {
-        Results.map(e => (
-          <div key={e.id}> {e.title}</div>
-        ))
+        RenderCategories()
       }
     </div>
+      </article>
+    </section>
+    <footer>
+      footer
+    </footer>
+    </>
   )
 }
 
