@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Category from './components/Category'
+import 
+
 
 function App() {
   const [Results, setResults] = useState([])   //restAPI call
@@ -18,6 +20,12 @@ const RenderCategories = () => {
   return Results.map(c => 
     <Category key = {c.id} id = {c.id} title = {c.title} />
   )
+//Looping instead of mapping 
+  // const Categories = [];
+  // for (let i = 0; i < Results.length; i++){
+  //   Categories.push( <Category key = {Results[i].id} id = {Results[i].id} title = {Results[i].title} />)
+  // }
+  // return categories;
 }
 
 
