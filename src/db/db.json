@@ -1,0 +1,12 @@
+{
+    "Categories":[
+        {"id": 1, "title": "Fridges"},
+        {"id": 2, "title": "Kettles"},
+        {"id": 3, "title": "Televison"}
+    ],
+    "Products":[
+        {"id": 1, "catId": 1, "title": "Beko white fridge freezer"},
+        {"id": 2, "catId": 1, "title": "Beko Yellow  fridge freezer"},
+        {"id": 3, "catId": 1, "title": "Beko green fridge freezer"}
+    ]
+}
