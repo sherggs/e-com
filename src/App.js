@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Category from './components/Category'
-import 
 
 
 function App() {
@@ -18,7 +17,7 @@ useEffect(() => {
 
 const RenderCategories = () => {
   return Results.map(c => 
-    <Category key = {c.id} id = {c.id} title = {c.title} />
+    <Category key = {c.id} id = {c.id} title = {c.title} onCategoryClick={() => HandleCategoryClick(c.id)} />
   )
 //Looping instead of mapping 
   // const Categories = [];
@@ -26,6 +25,10 @@ const RenderCategories = () => {
   //   Categories.push( <Category key = {Results[i].id} id = {Results[i].id} title = {Results[i].title} />)
   // }
   // return categories;
+}
+
+const HandleCategoryClick = id => {
+  alert("id:" +id)
 }
 
 
