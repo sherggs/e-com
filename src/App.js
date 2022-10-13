@@ -28,7 +28,7 @@ const RenderCategories = () => {
 }
 
 const HandleCategoryClick = id => {
-  alert("id:" +id)
+  alert("id: " +id)
 }
 
 
