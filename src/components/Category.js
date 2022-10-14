@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import { getCategoryById } from './Fetcher';
 
 const Category = ({id, title, onCategoryClick}) => {
-  return (
-    <div key={id} onClick={() => onCategoryClick(id)} > {title}</div>
+  const {CategoryId} = useParams();
+  const [Category, setCategory] = useState(Category)
+  useEffect(() => {
+    const fetchData = async () => {
+      const responseObject = await getCategoryById(CategoryId)
+      setCategory(responseObject)
+    }
+    fetchData()
+  }, [CategoryId])
 
-  )
+  return( <div> </div>)
+  
 }
+
 
 export default Category
