@@ -30,3 +30,10 @@ export const getProducts = id =>{
 export const getProductsById = id =>{
     return Fetcher('/Products' + id)
 }
+export const getCategoryById = id =>{
+    return Fetcher('/Categories' + id)
+}
+
+const setProductHtml = () => {
+    return {__html: getProducts.data?.description}
+}
