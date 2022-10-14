@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Category from './components/Category'
+// import { Fetcher } from './components/Fetcher'
 
 
 function App() {
