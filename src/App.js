@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Outlet } from 'react-router-dom'
 import Category from './components/Category'
 // import { Fetcher } from './components/Fetcher'
 
@@ -39,13 +40,16 @@ const HandleCategoryClick = id => {
       Store 
     </header>
     <section>
-      <article>
+      <nav>
       <div>
       {
         RenderCategories()
       }
     </div>
-      </article>
+      </nav>
+      <main>
+        <Outlet />
+      </main>
     </section>
     <footer>
       footer
