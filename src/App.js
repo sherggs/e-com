@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import Category from './components/Category'
 // import { Fetcher } from './components/Fetcher'
 
@@ -52,7 +52,7 @@ const HandleCategoryClick = id => {
       </main>
     </section>
     <footer>
-      <Link to="/Home">Home </Link>
+      {/* <Link to="/Home">Home </Link> */}
     </footer>
     </>
   )
