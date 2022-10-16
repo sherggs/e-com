@@ -1,10 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import { CartContext } from '../Context/CartContext';
 import { getCategoryById } from './Fetcher';
+
 
 const Category = ({id, title, onCategoryClick}) => {
   const {CategoryId} = useParams();
-  const [Category, setCategory] = useState(Category)
+
+  const CartContext = useContext(CartContext)
+
+  
+
+  const [Category, setCategory] = useState()
   useEffect(() => {
     const fetchData = async () => {
       const responseObject = await getCategoryById(CategoryId)
@@ -13,7 +20,9 @@ const Category = ({id, title, onCategoryClick}) => {
     fetchData()
   }, [CategoryId])
 
-  return( <div> </div>)
+  return( <div>
+
+     </div>)
   
 }
 
