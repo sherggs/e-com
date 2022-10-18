@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { CartContext } from '../Context/CartContext';
 import { getCategoryById } from './Fetcher';
 
@@ -7,7 +7,10 @@ import { getCategoryById } from './Fetcher';
 const Category = ({id, title, onCategoryClick}) => {
   const {CategoryId} = useParams();
 
+
+const navigate = useNavigate
   const CartContext = useContext(CartContext)
+  const {addProducts} = CartContext;
 
   
 
@@ -20,9 +23,10 @@ const Category = ({id, title, onCategoryClick}) => {
     fetchData()
   }, [CategoryId])
 
-  return( <div>
-
-     </div>)
+  return( 
+  <div>
+    <button onClick={() => addProducts({id, title })} ></button>
+  </div>)
   
 }
 
