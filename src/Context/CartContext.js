@@ -12,6 +12,18 @@ const CartContextProvider = ({children}) => {
         dispatch({type: "ADD", payload})
         debugger;
     }
+    const removeProduct = payload => {
+        dispatch({type: "REMOVE", payload})
+    }
+    const clearProduct = payload => {
+        dispatch({type: "CLEAR", payload})
+    }
+    const increaseProduct = payload => {
+        dispatch({type: "INCQTY", payload})
+    }
+    const decreaseProduct = payload => {
+        dispatch({type: "DECQTY", payload})
+    }
 
     const contextValueItems = {
         addProduct,
