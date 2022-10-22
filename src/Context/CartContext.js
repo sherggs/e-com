@@ -15,18 +15,27 @@ const CartContextProvider = ({children}) => {
     const removeProduct = payload => {
         dispatch({type: "REMOVE", payload})
     }
-    const clearProduct = payload => {
-        dispatch({type: "CLEAR", payload})
+    const clearCart = () => {
+        dispatch({type: "CLEAR", payload: undefined })
     }
-    const increaseProduct = payload => {
+    const increaseQuantity = payload => {
         dispatch({type: "INCQTY", payload})
     }
-    const decreaseProduct = payload => {
+    const decreaseQuantity = payload => {
         dispatch({type: "DECQTY", payload})
+    }
+
+    const getItems = () =>{
+        return state.cartItems;
     }
 
     const contextValueItems = {
         addProduct,
+        removeProduct,
+        clearCart,
+        increaseQuantity,
+        decreaseQuantity,
+        getItems,
         ...state
     }
 
