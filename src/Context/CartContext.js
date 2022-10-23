@@ -10,7 +10,6 @@ const CartContextProvider = ({children}) => {
 
     const addProduct = payload => {
         dispatch({type: "ADD", payload})
-        debugger;
     }
     const removeProduct = payload => {
         dispatch({type: "REMOVE", payload})
