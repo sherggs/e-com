@@ -11,6 +11,7 @@ const Basket = () => {
     if (cartItems.length > 0){
       return cartItems.map((p) =>(
         <div>{p.title}</div>
+        
       ))
     }
     else{
