@@ -1,22 +1,27 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { CartContext } from '../Context/CartContext'
 
 
 const Basket = () => {
+  const [cartItems, setCartItems] = useState([]);
   const Navigate = useNavigate();
   const {getItems, addProduct, removeProduct, clearCart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
 
+  useEffect(() => {
+    setCartItems(getItems())
+  }, [getItems])
+  
+
   const renderTotal = () => {
-    const cartItems = getItems()
 
     const Total = cartItems.reduce((Total, item) => (Total + item.price * item.quantity), 0);
     return Total
   }
 
+
   const RenderCart = () => { 
-    const cartItems = getItems();
 
     if (cartItems.length > 0){
       return cartItems.map((p) =>(
@@ -26,13 +31,15 @@ const Basket = () => {
     }
     else{
       return <div>The Basket Is currently empty</div>
+
     }
   }
 
   return (
     <>
     <div>
-
+    <button>the total is &pound;{renderTotal()}</button>
+    <button onClick={() => clearCart()}>Clear</button>
     </div>
     </>
   )
