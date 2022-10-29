@@ -16,6 +16,7 @@ const CartContextProvider = ({children}) => {
     }
     const clearCart = () => {
         dispatch({type: "CLEAR", payload: undefined })
+        return state.cartItems
     }
     const increaseQuantity = payload => {
         dispatch({type: "INCQTY", payload})
