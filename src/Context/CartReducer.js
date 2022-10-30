@@ -6,6 +6,8 @@ export const CartReducer = (state, action) => {
     if (action.payload){
         index = state.cartItems.findIndex(x => x.id === action.payload.id);
     }
+
+    let cartItems = [...state.cartItems]
 switch(action.type){
     case "ADD":
     case "INCQTY":
