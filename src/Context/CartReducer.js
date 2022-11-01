@@ -46,5 +46,4 @@ switch(action.type){
 state.cartItems  = newItems;
 return state;
 
-
 }
