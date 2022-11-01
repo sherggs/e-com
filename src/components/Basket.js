@@ -38,11 +38,17 @@ const Basket = () => {
   return (
     <>
     <div>
+    <div>{RenderCart()} </div>
     <button>the total is &pound;{renderTotal()}</button>
-    <button onClick={() => clearCart()}>Clear</button>
+    <button onClick={() => setCartItems(clearCart())}>Clear</button>
+    <button onClick={() => Navigate("/checkout")}>goto Checkout </button>
     </div>
     </>
   )
 }
+
+styled.div`
+
+`
 
 export default Basket
