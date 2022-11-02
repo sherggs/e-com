@@ -39,6 +39,7 @@ switch(action.type){
             newItems = [];
         }
         break;
+        
 
 
     default:
