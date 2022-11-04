@@ -3,10 +3,10 @@ import { CartReducer } from "./CartReducer";
 
 export const CartContext = createContext();
 
-const InitalState = { cartItems: []}
+const InitialState = { cartItems: []}
 
 const CartContextProvider = ({children}) => {
-    const [state, dispatch] = useReducer(CartReducer, InitalState) 
+    const [state, dispatch] = useReducer(CartReducer, InitialState) 
 
     const addProduct = payload => {
         dispatch({type: "ADD", payload})
@@ -20,7 +20,7 @@ const CartContextProvider = ({children}) => {
     }
     const increaseQuantity = payload => {
         dispatch({type: "INCQTY", payload})
-    }
+    } 
     const decreaseQuantity = payload => {
         dispatch({type: "DECQTY", payload})
     }
