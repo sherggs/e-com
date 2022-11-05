@@ -1,3 +1,8 @@
+const Storage = (cartItems) => {
+ localStorage.setItem('cart', JSON.stringify(cartItems.length > 0 ? cartItems: []))
+}
+
+
 export const CartReducer = (state, action) => {
     debugger;
 
@@ -29,6 +34,7 @@ switch(action.type){
         break;
     case "DECQTY":
         if(index > -1){
+            if(newItems[index].quantity > 1)   //so it doesn't count as -1 less 
             // state.cartItems[index].quantity--;
             newItems[index].quantity--;
         }
@@ -45,6 +51,7 @@ switch(action.type){
     default:
 }
 state.cartItems  = newItems;
-return state;
+Storage(newItems)
+return state; 
 
 }
