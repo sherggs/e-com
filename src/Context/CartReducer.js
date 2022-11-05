@@ -4,7 +4,6 @@ const Storage = (cartItems) => {
 
 
 export const CartReducer = (state, action) => {
-    debugger;
 
 
     let index = -1
