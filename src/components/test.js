@@ -17,8 +17,15 @@ const test = () => {
 
  }, [])
  
+//  localStorage.getItem(key)
+//  localStorage.setItem(key, value)
+//  localStorage.removeItem(key)
+//  localStorage.clear()
 
-    
+//  sessionStorage.getItem(key)
+//  sessionStorage.setItem(key, value)
+//  sessionStorage.removeItem(key)
+//  sessionStorage.clear()
 
   return (
     <>
@@ -33,5 +40,7 @@ const test = () => {
     </>
   )
 }
+
+
 
 export default test
