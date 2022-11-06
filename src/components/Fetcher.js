@@ -33,6 +33,11 @@ export const getProductsById = id =>{
 export const getCategoryById = id =>{
     return Fetcher('/Categories' + id)
 }
+export const getProductsByQuery = query => {
+    return Fetcher('/products?q=' + query);
+
+}
+
 
 const setProductHtml = () => {
     return {__html: getProducts.data?.description}
