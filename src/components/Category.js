@@ -14,7 +14,7 @@ const navigate = useNavigate
 
   
 
-  const [Category, setCategory] = useState()
+  const [Products, setProducts] = useState()
   useEffect(() => {
     const fetchData = async () => {
       const responseObject = await getCategoryById(CategoryId)
@@ -23,8 +23,20 @@ const navigate = useNavigate
     fetchData()
   }, [CategoryId])
 
+
+  const RenderProducts = () => {
+    return Products.map((p) => {
+      <div key={p.id} {...p}>
+      {p.title}
+      </div>
+    })
+  }
+
   return( 
   <div>
+     {Products.errorMessage && <div> Error; {Products.errorMessage}</div>}
+
+{Products.data && RenderProducts()}
     <button onClick={() => addProducts({id, title })} ></button>
   </div>)
   
