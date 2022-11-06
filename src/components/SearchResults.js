@@ -17,17 +17,23 @@ import { getProductsByQuery } from './Fetcher';
           }, [query])
         
           const RenderProducts = () => {
-            return Products.map((p) => {
-              <div key={p.id} {...p}>
-              {p.title}
-              </div>
-            })
-          }
+            if(Products.length > 0){
+              return Products.map((p) => {
+                <div key={p.id} {...p}>
+                {p.title}
+                </div>
+              })
+            }
+            else {
+              return <div> No result found sorry!</div>
+            }
+            }
+           
     return (
         <>
         {Products.errorMessage && <div> Error; {Products.errorMessage}</div>}
 
-        {Products.data && RenderProducts()}
+        {RenderProducts()}
         </>
     )
     }
