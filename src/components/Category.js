@@ -18,7 +18,7 @@ const navigate = useNavigate
   useEffect(() => {
     const fetchData = async () => {
       const responseObject = await getCategoryById(CategoryId)
-      setCategory(responseObject)
+      setProducts(responseObject)
     }
     fetchData()
   }, [CategoryId])
