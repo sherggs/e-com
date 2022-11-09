@@ -32,3 +32,34 @@
     }
 
     export default Search
+
+
+
+
+// const [Name, setName] = useState([])
+
+// async function LoadNews(){
+//     await Response = fetch("https://localhost:3001")
+//     await Request = Response.json()
+//     setName(Request.Articles)
+// }
+
+// useEffect(() => {
+//   LoadNews;
+// }, [])
+
+// return (
+//     {Name.map( e =>(
+//         <div 
+        
+//         key={e.id}
+//         names = {e.name}
+//         values = {e.value}
+//         path = {e.Url}
+
+//         /> 
+        
+//     )}}
+
+//     practicing mappping
+)
