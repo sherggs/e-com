@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import { CartContext } from '../Context/CartContext';
+// import { CartContext } from '../Context/CartContext';
 import { getCategoryById } from './Fetcher';
 
 
