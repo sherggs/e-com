@@ -3,6 +3,8 @@ const BASE_URL = "http://localhost:3001";
 export const Fetcher = async(url) => {
     let responseObject = { errorMessage: '', data: []};
 
+
+    //try and catch 
     try {
         const response = await fetch(BASE_URL + url);
         if(!response.ok){
@@ -37,7 +39,6 @@ export const getProductsByQuery = query => {
     return Fetcher('/products?q=' + query);
 
 }
-
 
 const setProductHtml = () => {
     return {__html: getProducts.data?.description}
